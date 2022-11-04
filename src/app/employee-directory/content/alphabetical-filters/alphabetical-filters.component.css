@@ -1,0 +1,12 @@
+
+#alphabets
+{
+    border:solid black;
+}
+
+#alphabets button{
+    height: 200px;
+    width: 200px;
+    color: rgb(14, 140, 237);
+    border:solid black;
+}

@@ -1,0 +1,35 @@
+
+<header id="header">
+  <div id="company">
+    <div id="logo">
+      <img src=".\assets\images\saketa-logo.png" alt="" />
+    </div>
+
+    <!-- Displayed only in bigger divices -->
+    <div
+      id="title"
+      *ngIf="!(currentScreenSize === 'Small' || currentScreenSize === 'XSmall')"
+    >
+      <p class="blue-color">Employee Directory</p>
+      <p>The Ultimate People Directory Experience</p>
+    </div>
+  </div>
+
+  <div id="profile">
+    
+    <!-- profile name for bigger divices -->
+      <div id="name-forBiggerDevice" *ngIf="!(currentScreenSize === 'XSmall')">
+        <span class="blue-color">Welcome, </span>Andrew Philips
+      </div>
+
+    <!-- profile name for smaller divices -->
+      <div id="name-forSmallerDevice" *ngIf="currentScreenSize === 'XSmall'">
+        <p class="blue-color">Welcome,</p>
+        <p>Andrew Philips</p>
+      </div>
+
+    <!-- profile Image -->
+      <div><img src=".\assets\images\profile-1.png" alt="" /></div>
+    
+  </div>
+</header>
