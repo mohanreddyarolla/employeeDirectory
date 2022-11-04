@@ -23,9 +23,15 @@
               "src/assets"
             ],
             "styles": [
+              "src/custom-theme.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css",
               "src/styles.css"
+              
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/font-awesome/js/"
+            ]
           },
           "configurations": {
             "production": {
@@ -91,11 +97,15 @@
             ],
             "styles": [
               "src/styles.css"
+              
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7e7f572f-af1a-4fd2-9305-ae8157875439"
   }
 }
