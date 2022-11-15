@@ -1,12 +1,26 @@
 
 #alphabets
 {
-    border:solid black;
+    margin-top: 10px;
+    
+}
+#alphabets button{
+    height: 32px;
+    width: 32px;
+    margin: 1px;
+    background: rgba(0, 177, 252, 255);
+    color: white;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 }
 
-#alphabets button{
-    height: 200px;
-    width: 200px;
-    color: rgb(14, 140, 237);
-    border:solid black;
+#alphabets .optionSelected {
+    background-color: rgb(4, 111, 173);
 }
+
+

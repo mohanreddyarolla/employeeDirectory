@@ -1,16 +1,4 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-  </div>
-</div>
+
 <header id="header">
   <div id="company">
     <div id="logo">
@@ -18,10 +6,7 @@
     </div>
 
     <!-- Displayed only in bigger divices -->
-    <div
-      id="title"
-      *ngIf="!(currentScreenSize === 'Small' || currentScreenSize === 'XSmall')"
-    >
+    <div id="title" class ="d-none d-lg-block">
       <p class="blue-color">Employee Directory</p>
       <p>The Ultimate People Directory Experience</p>
     </div>
@@ -30,12 +15,12 @@
   <div id="profile">
     
     <!-- profile name for bigger divices -->
-      <div id="name-forBiggerDevice" *ngIf="!(currentScreenSize === 'XSmall')">
+      <div id="name-forBiggerDevice" class="col d-none d-md-block">
         <span class="blue-color">Welcome, </span>Andrew Philips
       </div>
 
     <!-- profile name for smaller divices -->
-      <div id="name-forSmallerDevice" *ngIf="currentScreenSize === 'XSmall'">
+      <div id="name-forSmallerDevice" class="col d-md-none">
         <p class="blue-color">Welcome,</p>
         <p>Andrew Philips</p>
       </div>

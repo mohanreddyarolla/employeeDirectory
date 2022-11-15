@@ -1,0 +1,78 @@
+
+/* ..............employee-dashboard............... */
+#employeeDashboard {
+    display: flex;
+    flex-wrap: wrap;
+    border: solid rgba(128, 128, 128, 0.342) 2px;
+    padding-left: 5px;
+
+    height: 325px;
+    overflow: scroll;
+    scroll-margin-block: none;
+    align-content: flex-start;
+}
+
+#employeeDashboard::-webkit-scrollbar {
+    display: none;
+}
+
+.employee-card {
+    display: flex;
+    margin: 10px 5px;
+    gap: 10px;
+    height: 80px;
+    width: 250px;
+    /* border: solid green; */
+    background-color: rgba(128, 128, 128, 0.221);
+
+}
+
+
+.employee-card:hover {
+    box-shadow: 0px 0px 3px 3px rgba(77, 76, 76, 0.221);
+}
+
+.employee-card .photo {
+    margin: 10px 10px;
+    /* border:solid; */
+
+}
+
+/* .employee-card p {
+    white-space: nowrap; 
+  width: 100px; 
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border:solid black; 
+} */
+
+.employee-card .photo img {
+    height: 50px;
+    width: 50px;
+
+}
+
+.employee-card .employee-data h4 {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.employee-card .employee-data {
+    padding-top: 2px;
+    font-size: 11px;
+
+}
+
+.employee-card .employee-data p {
+    line-height: 0px;
+}
+
+.employee-data .socail {
+
+    display: flex;
+    gap: 5px;
+}
+
+.employee-data .socail i {
+    color: rgba(128, 128, 128, 0.799);
+}

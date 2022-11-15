@@ -1,49 +1,144 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
+import { Subject } from 'rxjs/internal/Subject';
 
-// import {BreakpointObserver, Breakpoints, BreakpointState} from '@angular/cdk/layout';
-// import {Subject} from 'rxjs';
-// import {takeUntil} from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class EmployeeServiceService {
-  // destroyed = new Subject<void>();
-  // currentScreenSize: string | undefined;
 
-  // // Create a map to display breakpoint names for demonstration purposes.
-  // displayNameMap = new Map([
-  //   [Breakpoints.XSmall, 'XSmall'],
-  //   [Breakpoints.Small, 'Small'],
-  //   [Breakpoints.Medium, 'Medium'],
-  //   [Breakpoints.Large, 'Large'],
-  //   [Breakpoints.XLarge, 'XLarge'],
-  // ]);
+  profileSlected!: string;
+  editProfileClicked:boolean = false;
 
-  // constructor(breakpointObserver: BreakpointObserver) {
-  //   breakpointObserver
-  //     .observe([
-  //       Breakpoints.XSmall,
-  //       Breakpoints.Small,
-  //       Breakpoints.Medium,
-  //       Breakpoints.Large,
-  //       Breakpoints.XLarge,
-  //     ])
-  //     .pipe(takeUntil(this.destroyed))
-  //     .subscribe(result => {
-  //       for (const query of Object.keys(result.breakpoints)) {
-  //         if (result.breakpoints[query]) {
-  //           this.currentScreenSize = this.displayNameMap.get(query) ?? 'Unknown';
-  //         }
-  //       }
-  //     });
-  // }
-  // ngOnInit(): void {
-  //   //throw new Error('Method not implemented.');
-  // }
+  employeeRecord:{ [key: string]: any }= {};
+  titleFilterRecord:any={
+    'Job_Title':{
+      "Intern":{
+        'name':'Intern',
+        'id':[],
+        'count':0
+      },
+      "Junior_Software_Development":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+      "Software_Developer":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+      "Account_Manager":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+      "HR":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
 
-  // ngOnDestroy() {
-  //   this.destroyed.next();
-  //   this.destroyed.complete();
+    },
+    'Department':{
+      "Product_Engineer":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+      "HR_Operations":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+      "Finance_Accounts":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+      "Quality_Analyst":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+      "Data_Science":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+    },
+    'Location':{
+      "Hyderabad":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+      "Seatle":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+      "Hyderabad_Keka":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+      "Remote":{
+        'name':'',
+        'id':[],
+        'count':0
+      },
+
+    }
+  }
+
+//   output!: JSON;
+//  output: JSON = <JSON>this.titleFilterRecord;
+
+  employeeAddedSubject = new Subject();
+  filtersSubject = new Subject();
+  clearFilterSubject = new Subject();
+  totalCount = 1;
+
+  raiseAddEmployeeEvent()
+  {
+    this.employeeAddedSubject.next('');
+  }
+  
+  // interface filtersList{
+  //   count:0,
+  //   list:[]
   // }
+ 
+
+  selectedFiltersList :any =  {
+    numberOfOptionSelected:0,
+    Job_Title : {
+      count:0,
+      list: []
+    },
+    Department: {
+      count:0,
+      list: []
+    },
+    Location: {
+      count:0,
+      list:[]
+    },
+    alphabeticalFilters: {
+      count:0,
+      list: []
+    },
+    inputSearchFilters: {
+      count:0,
+      list:[]
+    }
+  }
+
+
+  
+
 }

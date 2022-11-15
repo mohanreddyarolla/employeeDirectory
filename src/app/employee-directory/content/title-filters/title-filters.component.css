@@ -1,4 +1,19 @@
-#title-filters div button
+#title-filters button
 {
-    display: block;
+    display: flex;
+    border: none;
+    background-color: white;
+}
+
+#title-filters h3{
+    margin-top: 10px;
+    margin-bottom:0px ;
+    font-weight: bold;
+}
+#title-filters{
+    width:260px;
+}
+
+#title-filters .optionSelected{
+    background-color: antiquewhite;
 }

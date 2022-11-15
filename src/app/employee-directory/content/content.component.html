@@ -1,4 +1,63 @@
-<app-input-search-filters></app-input-search-filters>
 
-<app-alphabetical-filters></app-alphabetical-filters>
-<app-title-filters></app-title-filters>
+<div id="largeScreenContent" class="d-flex" *ngIf="!(currentScreenSize == 'Small' || currentScreenSize == 'XSmall')">
+  <div id="left-content">
+    <app-title-filters></app-title-filters>
+  </div>
+  <div id="right-content">
+    <div id="alphabeticalFiltersButton">
+      <app-alphabetical-filters></app-alphabetical-filters>
+    </div>
+
+    <div id="search-addEmploee">
+      <div id="inputSearchFilters">
+        <app-input-search-filters></app-input-search-filters>
+      </div>
+
+      
+      <div id="addEmployeeButton" (click)="openDialog()"><button>Add Employee</button></div>
+    </div>
+
+    <div id="employeeDashBoards">
+      <app-employee-dashboard></app-employee-dashboard>
+    </div>
+  </div>
+</div>
+
+<div id="smallScreenContent" *ngIf="(currentScreenSize == 'Small' || currentScreenSize == 'XSmall')">
+  <div class="d-flex justify-content-between">
+    <div id="filtersButtons" class="d-flex">
+      <div id="titleFiltersButton"><button class="btn btn-lg btn-outline-primary" (click)="open(content1,'titleFiltersButton')">F</button></div>
+      <div id="alphabeticalFiltersButton"><button class="btn btn-lg btn-outline-primary" (click)="open(content2,'alphabeticalFiltersButton')">A</button></div>
+    </div>
+    <div id="addEmployeeButton"><button (click)="openDialog()">Add Employee</button></div>
+  </div>
+  <div id="inputSearchFilters">
+    <app-input-search-filters></app-input-search-filters>
+  </div>
+  <div id="employeeDashBoardcontent">
+    <app-employee-dashboard></app-employee-dashboard>
+  </div>
+</div>
+
+<ng-template #content1 let-c="close" let-d="dismiss">
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Apply Filters</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+    <app-title-filters></app-title-filters>
+	</div>
+	
+</ng-template>
+
+<ng-template #content2 let-c="close" let-d="dismiss">
+	<div class="modal-header">
+		<h4 class="modal-title" id="modal-basic-title">Apply Filters</h4>
+		<button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+	</div>
+	<div class="modal-body" >
+    <app-alphabetical-filters></app-alphabetical-filters>
+	</div>
+</ng-template>
+
+

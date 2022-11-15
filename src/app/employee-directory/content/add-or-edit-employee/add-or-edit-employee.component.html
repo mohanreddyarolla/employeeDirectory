@@ -1,1 +1,130 @@
-<p>add-or-edit-employee works!</p>
+<h2 mat-dialog-title>Employee Directory</h2>
+
+<mat-dialog-content class="mat-typography">
+  <form class="example-form">
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>First name</mat-label>
+
+            <input
+              matInput
+              name="first_name"
+              #firstNames
+              [(ngModel)]="employeeData.firstName"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Last name</mat-label>
+            <input
+              matInput
+              [(ngModel)]="employeeData.lastName"
+              name="last_name"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Preffered name</mat-label>
+            <input
+              matInput
+              [(ngModel)]="employeeData.preferedName"
+              name="prefered_name"
+            />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="employeeData.email" name="email" />
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Job Title</mat-label>
+            <mat-select
+              
+              [(ngModel)]="employeeData.jobTitle"
+              name="jobTitle"
+            >
+              <mat-option *ngFor="let item of jobTitle" [value]="item.value">
+                {{ item.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Department</mat-label>
+            <mat-select
+             
+              [(ngModel)]="employeeData.department"
+              name="department"
+            >
+              <mat-option *ngFor="let item of departments" [value]="item.value">
+                {{ item.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Location</mat-label>
+            <mat-select
+              
+              [(ngModel)]="employeeData.location"
+              name="location"
+            >
+              <mat-option *ngFor="let item of location" [value]="item.value">
+                {{ item.viewValue }}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width" appearance="fill">
+            <mat-label>Telephone</mat-label>
+            <span matPrefix>+91 &nbsp;</span>
+            <input
+              type="tel"
+              matInput
+              placeholder="555-555-1234"
+              [(ngModel)]="employeeData.phoneNumber"
+              name="phoneNumber"
+            />
+            
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close >Cancel</button>
+  <button
+    mat-button
+    [mat-dialog-close]="true"
+    cdkFocusInitial
+    
+    id = 'addOrCloseBtn'
+  >
+   <!-- renders based on situation -->
+  </button>
+</mat-dialog-actions>

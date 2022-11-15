@@ -21,6 +21,15 @@ import { AlphabeticalFiltersComponent } from './employee-directory/content/alpha
 import { InputSearchFiltersComponent } from './employee-directory/content/input-search-filters/input-search-filters.component';
 import { AddOrEditEmployeeComponent } from './employee-directory/content/add-or-edit-employee/add-or-edit-employee.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
+import { EmployeeDashboardComponent } from './employee-directory/content/employee-dashboard/employee-dashboard.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatInputModule} from '@angular/material/input';
+import { ProfileComponent } from './employee-directory/content/profile/profile.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +40,8 @@ import {MatSelectModule} from '@angular/material/select';
     AlphabeticalFiltersComponent,
     InputSearchFiltersComponent,
     AddOrEditEmployeeComponent,
+    EmployeeDashboardComponent,
+    ProfileComponent,
     
     
   ],
@@ -43,7 +54,12 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatButtonModule,
     FlexLayoutModule,
-    MatSelectModule
+    MatSelectModule,
+    MatSidenavModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatDialogModule,
+    MatInputModule
     
   ],
   providers: [EmployeeServiceService],

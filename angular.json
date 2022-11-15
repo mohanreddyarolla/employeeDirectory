@@ -30,7 +30,7 @@
               
             ],
             "scripts": [
-              "node_modules/font-awesome/js/"
+              
             ]
           },
           "configurations": {

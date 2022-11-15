@@ -1,0 +1,109 @@
+
+<section style="background-color: #eee">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="card mb-4">
+        <div class="card-body text-center">
+          <img
+            src=".\assets\images\profile-1.png"
+            alt="avatar"
+            class="rounded-circle img-fluid"
+            style="width: 150px"
+            id="model_profiel_image"
+          />
+          <h5 class="my-3" id="model_profiel_prefferedName">
+            {{ preferedName }}
+          </h5>
+          <p class="text-muted mb-1" id="model_profiel_jobTitle">
+            {{ jobTitle }}
+          </p>
+          <p class="text-muted mb-1" id="model_profiel_department">
+            {{ department }}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div class="card mb-4">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Full Name</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0" id="model_full_name">{{ fullName }}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Job Title</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0" id="model_jobTitle">{{ jobTitle }}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Department</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0" id="model_department">
+                {{ department }}
+              </p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Email</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0" id="model_email">{{ email }}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Phone</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0" id="model_phone">{{ phoneNumber }}</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-3">
+              <p class="mb-0">Location</p>
+            </div>
+            <div class="col-sm-9">
+              <p class="text-muted mb-0" id="model_location">{{ location }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal-footer">
+  <!-- this closes the dialog -->
+  <button
+    this
+    closes
+    the
+    dialog
+    mat-button
+    mat-dialog-close
+    type="button"
+    class="btn btn-secondary"
+    data-dismiss="modal"
+    id="profile_close"
+  >
+    Close
+  </button>
+  <button type="button" id="editProfile" class="btn btn-primary"
+  (click)="edit_profile()"
+  >Edit</button>
+</div>
