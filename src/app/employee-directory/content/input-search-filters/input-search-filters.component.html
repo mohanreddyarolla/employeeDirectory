@@ -2,13 +2,17 @@
   <div id="search" class="d-flex">
     <p class="d-none d-sm-block">Search</p>
     <div id="input">
-      <button id="searchButton" (click)="searchInput();">
-        <i class="fa-solid fa-magnifying-glass"></i>
+      <button id="searchButton" (click)="searchInput()">
+        <i class="bi bi-search"></i>
       </button>
-      <input [(ngModel)]="enteredInput" type="text" id="enteredInput" placeholder="Enter any keyword" />
+      <input
+        [(ngModel)]="enteredInput"
+        type="text"
+        id="enteredInput"
+        placeholder="Enter any keyword"
+      />
     </div>
   </div>
-  
 
   <button id="clear-btn" mat-button (click)="clearFilter()">Clear</button>
 

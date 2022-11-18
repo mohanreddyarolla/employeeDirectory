@@ -1,12 +1,8 @@
-
 /*....................... Header.................... */
 
 header {
-    /* position: -webkit-sticky; */
-    /* position: sticky; */
     top: 0px;
     display: flex;
-    /* height: fit-content; */
     justify-content: space-between;
     border-bottom: solid rgba(128, 128, 128, 0.342) 2px;
     height: 80px;
@@ -33,7 +29,7 @@ header {
 }
 
 #profile {
-   
+
     display: flex;
     height: fit-content;
     font-weight: bold;
@@ -57,14 +53,14 @@ header {
     color: rgba(0, 177, 252, 255);
     font-size: 25px;
 }
+
 #name-forBiggerDevice {
     margin-top: 25px;
-    font-size:25px;
+    font-size: 25px;
 }
 
-#name-forSmallerDevice p
-{
-    font-size:18px;
+#name-forSmallerDevice p {
+    font-size: 18px;
     line-height: 15px;
 }
 
@@ -73,8 +69,9 @@ header {
         height: 40px;
         padding-left: 5px;
     }
+
     #logo img {
         height: 40px;
     }
-    
-  }
+
+}

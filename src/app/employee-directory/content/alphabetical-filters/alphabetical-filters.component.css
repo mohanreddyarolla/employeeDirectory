@@ -1,10 +1,9 @@
-
-#alphabets
-{
+#alphabets {
     margin-top: 10px;
-    
+
 }
-#alphabets button{
+
+#alphabets button {
     height: 32px;
     width: 32px;
     margin: 1px;
@@ -22,5 +21,3 @@
 #alphabets .optionSelected {
     background-color: rgb(4, 111, 173);
 }
-
-

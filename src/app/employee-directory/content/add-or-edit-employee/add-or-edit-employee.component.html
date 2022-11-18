@@ -53,11 +53,7 @@
         <td>
           <mat-form-field appearance="fill">
             <mat-label>Job Title</mat-label>
-            <mat-select
-              
-              [(ngModel)]="employeeData.jobTitle"
-              name="jobTitle"
-            >
+            <mat-select [(ngModel)]="employeeData.jobTitle" name="jobTitle">
               <mat-option *ngFor="let item of jobTitle" [value]="item.value">
                 {{ item.viewValue }}
               </mat-option>
@@ -69,11 +65,7 @@
         <td>
           <mat-form-field appearance="fill">
             <mat-label>Department</mat-label>
-            <mat-select
-             
-              [(ngModel)]="employeeData.department"
-              name="department"
-            >
+            <mat-select [(ngModel)]="employeeData.department" name="department">
               <mat-option *ngFor="let item of departments" [value]="item.value">
                 {{ item.viewValue }}
               </mat-option>
@@ -85,11 +77,7 @@
         <td>
           <mat-form-field appearance="fill">
             <mat-label>Location</mat-label>
-            <mat-select
-              
-              [(ngModel)]="employeeData.location"
-              name="location"
-            >
+            <mat-select [(ngModel)]="employeeData.location" name="location">
               <mat-option *ngFor="let item of location" [value]="item.value">
                 {{ item.viewValue }}
               </mat-option>
@@ -109,7 +97,6 @@
               [(ngModel)]="employeeData.phoneNumber"
               name="phoneNumber"
             />
-            
           </mat-form-field>
         </td>
       </tr>
@@ -117,14 +104,13 @@
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close >Cancel</button>
+  <button mat-button mat-dialog-close>Cancel</button>
   <button
     mat-button
     [mat-dialog-close]="true"
     cdkFocusInitial
-    
-    id = 'addOrCloseBtn'
+    id="addOrCloseBtn"
   >
-   <!-- renders based on situation -->
+    <!-- renders based on situation -->
   </button>
 </mat-dialog-actions>
