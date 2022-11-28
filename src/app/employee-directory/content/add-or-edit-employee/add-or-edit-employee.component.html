@@ -1,17 +1,34 @@
 <h2 mat-dialog-title>Employee Directory</h2>
 
 <mat-dialog-content class="mat-typography">
-  <form class="example-form">
-    <table class="example-full-width" cellspacing="0">
+  <form class="example-form" #form = 'ngForm'>
+
+    <!-- <div class="form-group">
+      <input type="text" name="firstName" id="" ngModel required minlength="3" class="from-control">
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="lastName" id="" ngModel required minlength="3" class="from-control">
+    </div> -->
+
+    
+
+  <table class="example-full-width" cellspacing="0">  
       <tr>
         <td>
+          <p *ngIf="!firstName.valid && firstName.touched">Enter Valid First Name</p>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>First name</mat-label>
 
             <input
+              required
+              pattern="[a-zA-Z ]*"
               matInput
               name="first_name"
-              #firstNames
+              #firstName="ngModel"
+              class="form-control"
+              ngModel
+              
               [(ngModel)]="employeeData.firstName"
             />
           </mat-form-field>
@@ -19,12 +36,17 @@
       </tr>
       <tr>
         <td>
+          <p *ngIf="!lastName.valid && lastName.touched">Enter Valid Last Name</p>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Last name</mat-label>
             <input
+            pattern="[a-zA-Z ]*"
+              required
               matInput
               [(ngModel)]="employeeData.lastName"
               name="last_name"
+              ngModel
+              #lastName="ngModel"
             />
           </mat-form-field>
         </td>
@@ -43,17 +65,34 @@
       </tr>
       <tr>
         <td>
+          <p *ngIf="!email.valid && email.touched">Enter valid email</p>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput [(ngModel)]="employeeData.email" name="email" />
+            <input
+              required
+              type="email"
+              matInput
+              [(ngModel)]="employeeData.email"
+              name="email"
+              ngModel
+              email
+              #email="ngModel"
+            />
           </mat-form-field>
         </td>
       </tr>
       <tr>
         <td>
+          <p *ngIf="!jobTitles.valid && jobTitles.touched">Enter First Name</p>
           <mat-form-field appearance="fill">
             <mat-label>Job Title</mat-label>
-            <mat-select [(ngModel)]="employeeData.jobTitle" name="jobTitle">
+            <mat-select
+              required
+              [(ngModel)]="employeeData.jobTitle"
+              name="jobTitle"
+              ngModel
+              #jobTitles="ngModel"
+            >
               <mat-option *ngFor="let item of jobTitle" [value]="item.value">
                 {{ item.viewValue }}
               </mat-option>
@@ -63,9 +102,18 @@
       </tr>
       <tr>
         <td>
+          <p *ngIf="!department.valid && department.touched">
+            Enter First Name
+          </p>
           <mat-form-field appearance="fill">
             <mat-label>Department</mat-label>
-            <mat-select [(ngModel)]="employeeData.department" name="department">
+            <mat-select
+              required
+              [(ngModel)]="employeeData.department"
+              name="department"
+              ngModel
+              #department="ngModel"
+            >
               <mat-option *ngFor="let item of departments" [value]="item.value">
                 {{ item.viewValue }}
               </mat-option>
@@ -75,9 +123,16 @@
       </tr>
       <tr>
         <td>
+          <p *ngIf="!locations.valid && locations.touched">Enter First Name</p>
           <mat-form-field appearance="fill">
             <mat-label>Location</mat-label>
-            <mat-select [(ngModel)]="employeeData.location" name="location">
+            <mat-select
+              required=""
+              [(ngModel)]="employeeData.location"
+              name="location"
+              ngModel
+              #locations="ngModel"
+            >
               <mat-option *ngFor="let item of location" [value]="item.value">
                 {{ item.viewValue }}
               </mat-option>
@@ -87,13 +142,17 @@
       </tr>
       <tr>
         <td>
+          <p *ngIf="!phoneNumber.valid && phoneNumber.touched">Enter correct phone number</p>
           <mat-form-field class="example-full-width" appearance="fill">
             <mat-label>Telephone</mat-label>
             <span matPrefix>+91 &nbsp;</span>
             <input
+            pattern="\d{10}"
+              required
               type="tel"
               matInput
               placeholder="555-555-1234"
+              #phoneNumber="ngModel"
               [(ngModel)]="employeeData.phoneNumber"
               name="phoneNumber"
             />
@@ -101,15 +160,17 @@
         </td>
       </tr>
     </table>
+  
   </form>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button mat-dialog-close (click)="cancel(form)">Cancel</button>
   <button
     mat-button
     [mat-dialog-close]="true"
     cdkFocusInitial
     id="addOrCloseBtn"
+    [disabled]="!form.valid"
   >
     <!-- renders based on situation -->
   </button>

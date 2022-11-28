@@ -23,7 +23,7 @@ import { AddOrEditEmployeeComponent } from './employee-directory/content/add-or-
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { EmployeeDashboardComponent } from './employee-directory/content/employee-dashboard/employee-dashboard.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
@@ -59,8 +59,8 @@ import { ProfileComponent } from './employee-directory/content/profile/profile.c
     MatCheckboxModule,
     FormsModule,
     MatDialogModule,
-    MatInputModule
-    
+    MatInputModule,
+    ReactiveFormsModule
   ],
   providers: [EmployeeServiceService],
   bootstrap: [AppComponent]

@@ -5,7 +5,7 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { FormControl, Validators,ReactiveFormsModule, FormGroup  } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { EmployeeServiceService } from 'src/app/Services/employee-service.service';
 
@@ -24,6 +24,11 @@ export class AddOrEditEmployeeComponent implements OnInit, AfterViewInit {
   presentProfileJobTitle!: string;
   presentProfileDepartment!: string;
   presentProfileLocation!: string;
+  
+  @ViewChild('form') form:ElementRef | undefined;
+  // employeeForm = new FormGroup({
+  //   first_name: new FormControl("",[Validators.required]),
+  // });
 
   jobTitle: Title[] = [
     { value: 'Intern', viewValue: 'Intern' },
@@ -64,11 +69,13 @@ export class AddOrEditEmployeeComponent implements OnInit, AfterViewInit {
 
   constructor(
     private dataService: EmployeeServiceService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    
   ) {
     this.dataService.clearFilterSubject.subscribe(() => {
       this.clearFilters();
     });
+    
   }
   ngAfterViewInit(): void {
     let btn = document.getElementById('addOrCloseBtn');
@@ -124,6 +131,8 @@ export class AddOrEditEmployeeComponent implements OnInit, AfterViewInit {
 
     this.updateTitleFilters();
     this.dataService.raiseAddEmployeeEvent();
+
+    console.log(this.form);
   }
 
   updateTitleFilters() {
@@ -185,5 +194,10 @@ export class AddOrEditEmployeeComponent implements OnInit, AfterViewInit {
       this.dataService.selectedFiltersList[key].count = 0;
       this.dataService.selectedFiltersList[key].list = [];
     });
+  }
+
+  cancel(form:any){
+    console.log(form.valid);
+    console.log(form);
   }
 }

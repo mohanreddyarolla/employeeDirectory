@@ -12,3 +12,10 @@
 td {
   padding-right: 8px;
 }
+
+p{
+  padding: 0px;
+  margin: 0px;
+  color: red;
+  font-size: 10px;
+}

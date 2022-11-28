@@ -50,5 +50,7 @@ export class InputSearchFiltersComponent implements OnInit {
 
     this.enteredInput = '';
     this.selectedOption = '';
+
+    this.dataService.employeeAddedSubject.next('');
   }
 }

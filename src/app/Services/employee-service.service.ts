@@ -13,107 +13,42 @@ export class EmployeeServiceService {
   clearFilterSubject = new Subject(); //subject to be subcribed to clear all the selected filters
   employeeRecord: { [key: string]: any } = {}; //stores the employee record
 
+  title={id:[],count:0}
+
   titleFilterRecord: any = {
     Job_Title: {
-      Intern: {
-        name: 'Intern',
-        id: [],
-        count: 0,
-      },
-      Junior_Software_Development: {
-        name: '',
-        id: [],
-        count: 0,
-      },
-      Software_Developer: {
-        name: '',
-        id: [],
-        count: 0,
-      },
-      Account_Manager: {
-        name: '',
-        id: [],
-        count: 0,
-      },
-      HR: {
-        name: '',
-        id: [],
-        count: 0,
-      },
+      Intern: this.title,
+      Junior_Software_Development:this.title,
+      Software_Developer: this.title,
+      Account_Manager:this.title,
+      HR:this.title,
     },
     Department: {
-      Product_Engineer: {
-        name: '',
-        id: [],
-        count: 0,
-      },
-      HR_Operations: {
-        name: '',
-        id: [],
-        count: 0,
-      },
-      Finance_Accounts: {
-        name: '',
-        id: [],
-        count: 0,
-      },
-      Quality_Analyst: {
-        name: '',
-        id: [],
-        count: 0,
-      },
-      Data_Science: {
-        name: '',
-        id: [],
-        count: 0,
-      },
+      Product_Engineer:this.title,
+      HR_Operations:this.title,
+      Finance_Accounts:this.title,
+      Quality_Analyst:this.title,
+      Data_Science:this.title,
     },
     Location: {
-      Hyderabad: {
-        name: '',
-        id: [],
-        count: 0,
-      },
-      Seatle: {
-        name: '',
-        id: [],
-        count: 0,
-      },
-      Hyderabad_Keka: {
-        name: '',
-        id: [],
-        count: 0,
-      },
-      Remote: {
-        name: '',
-        id: [],
-        count: 0,
-      },
+      Hyderabad:this.title,
+      Seatle:this.title,
+      Hyderabad_Keka:this.title,
+      Remote:this.title,
     },
   };
 
+  countList={
+    count: 0,
+    list: [],
+  }
   selectedFiltersList: any = {
     numberOfOptionSelected: 0,
-    Job_Title: {
-      count: 0,
-      list: [],
-    },
-    Department: {
-      count: 0,
-      list: [],
-    },
-    Location: {
-      count: 0,
-      list: [],
-    },
-    alphabeticalFilters: {
-      count: 0,
-      list: [],
-    },
-    inputSearchFilters: {
-      count: 0,
-      list: [],
-    },
+    Job_Title: this.countList,
+    Department: this.countList,
+    Location: this.countList,
+    alphabeticalFilters: this.countList,
+    inputSearchFilters: this.countList,
   };
 
   loadServiceData() {

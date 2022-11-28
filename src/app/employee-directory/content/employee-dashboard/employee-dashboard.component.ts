@@ -195,13 +195,20 @@ export class EmployeeDashboardComponent implements OnInit, AfterViewInit {
       }
     });
 
+    let count =0;
     for (let key in resultMap) {
       if (
         resultMap.get(key)! >=
         this.dataService.selectedFiltersList.numberOfOptionSelected
       ) {
         this.addEmployeeCard(key);
+        count += 1;
       }
+    }
+
+    if(count == 0)
+    {
+      document.getElementById('employeeDashboard')!.innerHTML = "<p id='noEmployeeFound'>No Employee Matched</p>"
     }
   }
 }
